@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /vendor/
 node_modules/
 npm-debug.log
@@ -28,3 +29,4 @@ Homestead.json
 .env.production
 .phpactor.json
 auth.json
+>>>>>>> 4cd3781 (first commit)
