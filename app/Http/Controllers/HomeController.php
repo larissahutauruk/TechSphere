@@ -3,16 +3,18 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\gadgets;
 
 class HomeController extends Controller
 {
     public function index()
     {
-        $products = [
-            ['name' => 'iPhone 16', 'image' => 'iphone.jpg', 'price' => 'Rp 15.000.000'],
-            ['name' => 'ASUS ROG Zephyrus G14', 'image' => 'rog.jpg', 'price' => 'Rp 25.000.000'],
-            ['name' => 'Samsung Galaxy S25 Ultra', 'image' => 'samsung.jpg', 'price' => 'Rp 20.000.000'],
-        ];
-        return view('home', compact('products'));
+        // Ambil 4 data pertama
+        $gadgets = Gadgets::take(4)->get();
+
+        // Ambil sisa data setelah 4 data pertama
+        $recommendedGadgets = Gadgets::skip(4)->take(PHP_INT_MAX)->get();
+
+        return view('homepage', compact('gadgets', 'recommendedGadgets'));
     }
 }

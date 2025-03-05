@@ -255,33 +255,33 @@
         </ul>
         <div class="nav-icons">
             <input type="text" class="search-bar" placeholder="Search something..">
-            <a href="#"><img src="{{ asset('pict/Home.png') }}" alt="Home"></a>
-            <a href="{{ route('pralogin') }}"><img src="{{ asset('pict/Account.png') }}" alt="User"></a>
+            <a href="#"><img src="<?php echo e(asset('pict/Home.png')); ?>" alt="Home"></a>
+            <a href="<?php echo e(route('pralogin')); ?>"><img src="<?php echo e(asset('pict/Account.png')); ?>" alt="User"></a>
         </div>
     </nav>
 
-    @foreach($gadgets as $gadget)
+    <?php $__currentLoopData = $gadgets; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $gadget): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
         <div class="main-product">
             <div class="product-image">
-                <img src="{{ asset('pict/' . $gadget->image) }}" alt="{{ $gadget->name }}">
+                <img src="<?php echo e(asset('pict/' . $gadget->image)); ?>" alt="<?php echo e($gadget->name); ?>">
             </div>
-            <div class="product-name">{{ $gadget->name }}</div>
-            <a href="{{ route('pralogin') }}" class="detail-link">Lihat Detail</a>
+            <div class="product-name"><?php echo e($gadget->name); ?></div>
+            <a href="<?php echo e(route('pralogin')); ?>" class="detail-link">Lihat Detail</a>
         </div>
-    @endforeach
+    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
 
     <!-- Bagian Rekomendasi Produk -->
     <section class="rekomendasi">
         <h2>Rekomendasi</h2>
         <div class="produk-container">
-            @foreach($recommendedGadgets as $gadget)
+            <?php $__currentLoopData = $recommendedGadgets; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $gadget): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                 <div class="produk">
                     <div class="produk-box">
-                        <img src="{{ asset('pict/' . $gadget->image) }}" alt="{{ $gadget->name }}">
+                        <img src="<?php echo e(asset('pict/' . $gadget->image)); ?>" alt="<?php echo e($gadget->name); ?>">
                     </div>
-                    <a href="{{ route('pralogin') }}" class="lihat-detail">Lihat Detail</a>
+                    <a href="<?php echo e(route('pralogin')); ?>" class="lihat-detail">Lihat Detail</a>
                 </div>
-            @endforeach
+            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
         </div>
     </section>
 
@@ -313,4 +313,4 @@
     </footer>
 </body>
 
-</html>
+</html><?php /**PATH C:\xampp\htdocs\techsephere\resources\views/homepage.blade.php ENDPATH**/ ?>
