@@ -8,6 +8,7 @@ use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\GadgetsController;
+use App\Http\Controllers\CategoriesController;
 
 // Homepage //
 Route::get('/', [HomeController::class, 'index'])->name('homepage');
@@ -26,15 +27,25 @@ Route::post('/register', [RegisterController::class, 'register'])->name('registe
 // Dashboard (harus login)
 Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
 
-Route::get('/admin/dashboard', [AdminController::class, 'index'])->name('admin.dashboard')->middleware('auth');
+// Halaman User
+Route::get('/user/dashboard', [DashboardController::class, 'index'])->name('user.home')->middleware('auth');
+
+// Logout
+Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
+
 // Halaman Dashboard Admin
-Route::get('/admin/dashboard', [AdminController::class, 'index'])->name('admin.dashboard')->middleware('auth');
-// Halaman Categories
-Route::get('/admin/categories', [AdminController::class, 'categories'])->name('admin.categories')->middleware('auth');
+Route::get('/admin/dashboard', [AdminController::class, 'index'])->name('admin.gadgets.dashboard')->middleware('auth');
 // Halaman Gadgets
 Route::get('/admin/gadgets', [AdminController::class, 'gadgets'])->name('admin.gadgets')->middleware('auth');
-
 // Halaman Edit & Delete
+Route::post('/admin/gadgets', [GadgetsController::class, 'store'])->name('gadgets.store');
 Route::get('/admin/gadgets/{id}/edit', [GadgetsController::class, 'edit'])->name('admin.gadgets.edit')->middleware('auth');
 Route::put('/admin/gadgets/{id}', [GadgetsController::class, 'update'])->name('admin.gadgets.update')->middleware('auth');
 Route::delete('/admin/gadgets/{id}', [GadgetsController::class, 'destroy'])->name('admin.gadgets.destroy')->middleware('auth');
+// Halaman Tambah Produk
+Route::prefix('admin')->group(function () {
+    Route::get('/gadgets/create', [GadgetsController::class, 'create'])->name('admin.gadgets.create');
+    Route::post('/gadgets/store', [GadgetsController::class, 'store'])->name('admin.gadgets.store');
+});
+// Halaman Categories
+Route::get('/admin/categories', [CategoriesController::class, 'categories'])->name('admin.categories.index')->middleware('auth');

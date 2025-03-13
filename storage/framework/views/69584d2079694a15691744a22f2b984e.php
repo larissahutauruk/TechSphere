@@ -109,14 +109,19 @@
     <nav class="navbar">
         <div class="logo">TechSphere</div>
         <ul class="nav-links">
-            <li><b><a href="<?php echo e(route('admin.categories')); ?>">Categories</a></b></li>
-            <li><b><a href="<?php echo e(route('admin.gadgets')); ?>">Gadgets</a></b></li>
+            <li><b><a href="<?php echo e(route('admin.categories.index')); ?>">Categories</a></b></li>
+            <li><b><a href="#">Gadgets</a></b></li>
             <li><b><a href="#">Ratings</a></b></li>
         </ul>
         <div class="nav-icons">
             <input type="text" class="search-bar" placeholder="Search something..">
             <a href="#"><img src="<?php echo e(asset('pict/Home.png')); ?>" alt="Home"></a>
             <a href="#"><img src="<?php echo e(asset('pict/Account.png')); ?>" alt="User"></a>
+            <form action="<?php echo e(route('logout')); ?>" method="POST">
+                <?php echo csrf_field(); ?>
+                <button type="submit" class="btn btn-danger">Logout</button>
+            </form>
+
         </div>
     </nav>
 
@@ -124,6 +129,7 @@
 
     <?php $__env->startSection('content'); ?>
         <h1>Daftar Produk</h1>
+        <a href="<?php echo e(route('admin.gadgets.create')); ?>" class="btn btn-success mb-3">Tambah Produk</a>
         <table>
             <tr>
                 <th>ID</th>
@@ -143,7 +149,7 @@
                     <td><?php echo e($gadget->tahun_keluaran); ?></td>
                     <td>Rp <?php echo e(number_format($gadget->harga, 0, ',', '.')); ?></td>
                     <td><?php echo e($gadget->description); ?></td>
-                    <td><?php echo e($gadget->image); ?></td>
+                    <td><img src="<?php echo e(asset('pict/' . $gadget->image)); ?>"></td>
                     <td>
                         <!-- Link Edit -->
                         <a href="<?php echo e(route('admin.gadgets.edit', $gadget->id)); ?>">Edit</a> |
@@ -163,4 +169,4 @@
 </body>
 
 </html>
-<?php echo $__env->make('layouts.app', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\xampp\htdocs\techsephere\resources\views/AdminDashboard.blade.php ENDPATH**/ ?>
+<?php echo $__env->make('layouts.app', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\xampp\htdocs\techsephere\resources\views/admin/gadgets/dashboard.blade.php ENDPATH**/ ?>

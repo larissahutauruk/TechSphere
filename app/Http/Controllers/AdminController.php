@@ -13,7 +13,7 @@ class AdminController extends Controller
         $gadgets = Gadgets::all(); // Ambil semua gadget dari database
         $categories = Categories::all(); // Ambil semua kategori dari database
 
-        return view('AdminDashboard', compact('gadgets', 'categories'));
+        return view('admin.gadgets.dashboard', compact('gadgets', 'categories'));
     }
 
 

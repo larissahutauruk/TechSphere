@@ -173,7 +173,7 @@
         </ul>
         <div class="nav-icons">
             <input type="text" class="search-bar" placeholder="Search something..">
-            <a href="#"><img src="<?php echo e(asset('pict/Home.png')); ?>" alt="Home"></a>
+            <a href="<?php echo e(route('homepage')); ?>"><img src="<?php echo e(asset('pict/Home.png')); ?>" alt="Home"></a>
             <a href="<?php echo e(route('pralogin')); ?>"><img src="<?php echo e(asset('pict/Account.png')); ?>" alt="User"></a>
         </div>
     </nav>

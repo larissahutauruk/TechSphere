@@ -9,6 +9,12 @@
 </head>
 
 <body>
+    <nav class="navbar">
+        <div class="logo">TechSphere</div>
+        <ul class="nav-links">
+        </ul>
+    </nav>
+
     <div class="container">
         <h2>Log In</h2>
         <form action="<?php echo e(url('/login')); ?>" method="POST">

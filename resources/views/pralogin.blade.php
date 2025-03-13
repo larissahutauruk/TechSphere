@@ -173,7 +173,7 @@
         </ul>
         <div class="nav-icons">
             <input type="text" class="search-bar" placeholder="Search something..">
-            <a href="#"><img src="{{ asset('pict/Home.png') }}" alt="Home"></a>
+            <a href="{{ route('homepage') }}"><img src="{{ asset('pict/Home.png') }}" alt="Home"></a>
             <a href="{{ route('pralogin') }}"><img src="{{ asset('pict/Account.png') }}" alt="User"></a>
         </div>
     </nav>

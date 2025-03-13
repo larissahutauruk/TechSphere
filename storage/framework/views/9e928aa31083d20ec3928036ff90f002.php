@@ -1,12 +1,11 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard</title>
+    <title>Document</title>
     <style>
-        /* General Styles */
         body {
             font-family: Arial, sans-serif;
             margin: 0;
@@ -109,57 +108,35 @@
     <nav class="navbar">
         <div class="logo">TechSphere</div>
         <ul class="nav-links">
-            <li><b><a href="{{ route('admin.categories') }}">Categories</a></b></li>
-            <li><b><a href="{{ route('admin.gadgets') }}">Gadgets</a></b></li>
+            <li><b><a href="#">Categories</a></b></li>
+            <li><b><a href="<?php echo e(route('admin.gadgets.dashboard')); ?>">Gadgets</a></b></li>
             <li><b><a href="#">Ratings</a></b></li>
         </ul>
         <div class="nav-icons">
             <input type="text" class="search-bar" placeholder="Search something..">
-            <a href="#"><img src="{{ asset('pict/Home.png') }}" alt="Home"></a>
-            <a href="#"><img src="{{ asset('pict/Account.png') }}" alt="User"></a>
+            <a href="<?php echo e(route('admin.gadgets.dashboard')); ?>"><img src="<?php echo e(asset('pict/Home.png')); ?>" alt="Home"></a>
+            <a href="#"><img src="<?php echo e(asset('pict/Account.png')); ?>" alt="User"></a>
         </div>
     </nav>
 
-    @extends('layouts.app')
+    
 
-    @section('content')
-        <h1>Daftar Produk</h1>
+    <?php $__env->startSection('content'); ?>
+        <h1>Daftar Kategori</h1>
         <table>
             <tr>
                 <th>ID</th>
                 <th>Name</th>
-                <th>Category ID</th>
-                <th>Tahun</th>
-                <th>Harga</th>
-                <th>Deskripsi</th>
-                <th>Gambar</th>
-                <th>Opsi</th>
             </tr>
-            @foreach($gadgets as $gadget)
+            <?php $__currentLoopData = $categories; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $category): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                 <tr>
-                    <td>{{ $gadget->id }}</td>
-                    <td>{{ $gadget->name }}</td>
-                    <td>{{ $gadget->categories_id }}</td>
-                    <td>{{ $gadget->tahun_keluaran }}</td>
-                    <td>Rp {{ number_format($gadget->harga, 0, ',', '.') }}</td>
-                    <td>{{ $gadget->description }}</td>
-                    <td>{{ $gadget->image }}</td>
-                    <td>
-                        <!-- Link Edit -->
-                        <a href="{{ route('admin.gadgets.edit', $gadget->id) }}">Edit</a> |
-
-                        <!-- Link Delete -->
-                        <form action="{{ route('admin.gadgets.destroy', $gadget->id) }}" method="POST" style="display:inline;">
-                            @csrf
-                            @method('DELETE')
-                            <button type="submit" onclick="return confirm('Yakin ingin menghapus?')">Delete</button>
-                        </form>
-                    </td>
+                    <td><?php echo e($category->id); ?></td>
+                    <td><?php echo e($category->name); ?></td>
                 </tr>
-            @endforeach
+            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
         </table>
-    @endsection
-
+    <?php $__env->stopSection(); ?>
 </body>
 
 </html>
+<?php echo $__env->make('layouts.app', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\xampp\htdocs\techsephere\resources\views/admin/categories/index.blade.php ENDPATH**/ ?>
