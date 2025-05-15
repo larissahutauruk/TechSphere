@@ -2,11 +2,15 @@
 body {
     font-family: Arial, sans-serif;
     background-color: #f5f5f5;
+    margin: 0;
+}
+.main-wrapper {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
-    margin: 0;
+    min-height: 60vh;
+    padding-top: 80px; /* tinggi navbar */
+    box-sizing: border-box;
 }
 .logo {
     padding-left: 50px;
