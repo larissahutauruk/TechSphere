@@ -116,6 +116,10 @@
             <input type="text" class="search-bar" placeholder="Search something..">
             <a href="<?php echo e(route('admin.gadgets.dashboard')); ?>"><img src="<?php echo e(asset('pict/Home.png')); ?>" alt="Home"></a>
             <a href="#"><img src="<?php echo e(asset('pict/Account.png')); ?>" alt="User"></a>
+            <form action="<?php echo e(route('logout')); ?>" method="POST">
+                <?php echo csrf_field(); ?>
+                <button type="submit" class="btn btn-danger">Logout</button>
+            </form>
         </div>
     </nav>
 

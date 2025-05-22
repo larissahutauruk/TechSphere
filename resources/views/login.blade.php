@@ -14,17 +14,18 @@
         <ul class="nav-links">
         </ul>
     </nav>
-
-    <div class="container">
-        <h2>Log In</h2>
-        <form action="{{ url('/login') }}" method="POST">
-            @csrf
-            <input type="email" name="email" placeholder="Email" required>
-            <input type="password" name="password" placeholder="Password" required>
-            <button type="submit">Berikutnya</button>
-        </form>
-        <a href="{{ route('register') }}">Buat akun.</a>
-        <button class="google-login">Masuk dengan Google</button>
+    <div class="main-wrapper">
+        <div class="container">
+            <h2>Log In</h2>
+            <form action="{{ url('/login') }}" method="POST">
+                @csrf
+                <input type="email" name="email" placeholder="Email" required>
+                <input type="password" name="password" placeholder="Password" required>
+                <button type="submit">Berikutnya</button>
+            </form>
+            <a href="{{ route('register') }}">Buat akun.</a>
+            <button class="google-login">Masuk dengan Google</button>
+        </div>
     </div>
 </body>
 

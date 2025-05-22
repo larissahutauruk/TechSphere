@@ -5,104 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard</title>
-    <style>
-        /* General Styles */
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-            align-items: center;
-        }
-
-        /* Logo */
-        .logo {
-            padding-left: 50px;
-            font-family: 'Kalnia';
-            font-size: 28px;
-            font-weight: bold;
-        }
-
-        /* Navigation Links */
-        .nav-links {
-            font-family: 'Calibri';
-            list-style: none;
-            display: flex;
-            right: 100px;
-        }
-
-        .nav-links li {
-            display: inline;
-        }
-
-        .nav-links a {
-            text-decoration: none;
-            color: black;
-            font-size: 20px;
-            transition: color 0.3s ease;
-        }
-
-        .nav-links a:hover {
-            color: black;
-        }
-
-        /* Icons & Search Bar */
-        .nav-icons {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-        }
-
-        .search-bar {
-            margin-right: 30px;
-            padding: 10px 40px;
-            border: 1px;
-            border-radius: 20px;
-            outline: none;
-            background-color: #d9d9d9;
-        }
-
-        .nav-icons img {
-            width: 24px;
-            height: 24px;
-        }
-
-        /* Navbar */
-        .navbar {
-            width: 100%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 15px 20px;
-            background: #f5f5f5;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-        }
-
-        .nav-links {
-            list-style: none;
-            display: flex;
-            gap: 50px;
-        }
-
-        .nav-links li a {
-            text-decoration: none;
-            color: black;
-            font-weight: bold;
-        }
-
-        .search input {
-            padding: 5px;
-            border-radius: 5px;
-            border: 1px solid #ccc;
-        }
-
-        .icons img {
-            width: 25px;
-            margin-left: 25px;
-        }
-    </style>
+    <link rel="stylesheet" href="{{ asset("css/admindashboard.css") }}">
 </head>
 
 <body>
@@ -129,36 +32,35 @@
 
     @section('content')
         <h1>Daftar Produk</h1>
-        <a href="{{ route('admin.gadgets.create') }}" class="btn btn-success mb-3">Tambah Produk</a>
-        <table>
-            <tr>
-                <th>ID</th>
-                <th>Name</th>
-                <th>Category ID</th>
-                <th>Tahun</th>
-                <th>Harga</th>
-                <th>Deskripsi</th>
-                <th>Gambar</th>
-                <th>Opsi</th>
+        <a href="{{ route('admin.gadgets.create') }}" class="button">Tambah Produk</a>
+        <table class="tabel">
+            <tr class="tabel-head" border-buttom="1px solid #d9d9d9">
+                <th width="50vh">ID</th>
+                <th width="200vh">Name</th>
+                <th width="130vh">Tahun Keluaran</th>
+                <th width="150vh">Harga</th>
+                <th width="450vh">Deskripsi</th>
+                <th width="200vh">Gambar</th>
+                <th width="150vh">Opsi</th>
             </tr>
             @foreach($gadgets as $gadget)
-                <tr>
+                <tr border-buttom="1px solid #d9d9d9">
                     <td>{{ $gadget->id }}</td>
                     <td>{{ $gadget->name }}</td>
-                    <td>{{ $gadget->categories_id }}</td>
                     <td>{{ $gadget->tahun_keluaran }}</td>
                     <td>Rp {{ number_format($gadget->harga, 0, ',', '.') }}</td>
-                    <td>{{ $gadget->description }}</td>
-                    <td><img src="{{ asset('pict/' . $gadget->image) }}"></td>
+                    <td class="tabel-deskripsi">{{ $gadget->description }}</td>
+                    <td><img src="{{ asset('pict/' . $gadget->image) }}" width="200px" height="120px"></td>
                     <td>
                         <!-- Link Edit -->
-                        <a href="{{ route('admin.gadgets.edit', $gadget->id) }}">Edit</a> |
+                        <a href="{{ route('admin.gadgets.edit', $gadget->id) }}" class="link">Edit</a>
 
                         <!-- Link Delete -->
                         <form action="{{ route('admin.gadgets.destroy', $gadget->id) }}" method="POST" style="display:inline;">
                             @csrf
                             @method('DELETE')
-                            <button type="submit" onclick="return confirm('Yakin ingin menghapus?')">Delete</button>
+                            <button type="submit" onclick="return confirm('Yakin ingin menghapus?')"
+                                class="button">Hapus</button>
                         </form>
                     </td>
                 </tr>
