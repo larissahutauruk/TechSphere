@@ -32,15 +32,15 @@
 
     @section('content')
         <h1>Daftar Produk</h1>
-        <a href="{{ route('admin.gadgets.create') }}" class="button">Tambah Produk</a>
+        <a href="{{ route('admin.gadgets.create') }}" class="button-1">Tambah Produk</a>
         <table class="tabel">
             <tr class="tabel-head" border-buttom="1px solid #d9d9d9">
-                <th width="50vh">ID</th>
-                <th width="200vh">Name</th>
+                <th width="50vh">NO</th>
+                <th width="200vh">Nama Produk</th>
                 <th width="130vh">Tahun Keluaran</th>
                 <th width="150vh">Harga</th>
                 <th width="450vh">Deskripsi</th>
-                <th width="200vh">Gambar</th>
+                <th width="200vh">Photo</th>
                 <th width="150vh">Opsi</th>
             </tr>
             @foreach($gadgets as $gadget)
