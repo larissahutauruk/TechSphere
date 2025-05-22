@@ -35,7 +35,7 @@
         <a href="<?php echo e(route('admin.gadgets.create')); ?>" class="button-1">Tambah Produk</a>
         <table class="tabel">
             <tr class="tabel-head" border-buttom="1px solid #d9d9d9">
-                <th width="50vh">NO</th>
+                <th width="50vh">No</th>
                 <th width="200vh">Nama Produk</th>
                 <th width="130vh">Tahun Keluaran</th>
                 <th width="150vh">Harga</th>
