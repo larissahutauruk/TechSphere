@@ -44,7 +44,7 @@
                 <th width="150vh">Opsi</th>
             </tr>
             @foreach($gadgets as $gadget)
-                <tr border-buttom="1px solid #d9d9d9">
+                <tr class="table-body">
                     <td>{{ $gadget->id }}</td>
                     <td>{{ $gadget->name }}</td>
                     <td>{{ $gadget->tahun_keluaran }}</td>

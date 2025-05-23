@@ -44,7 +44,7 @@
                 <th width="150vh">Opsi</th>
             </tr>
             <?php $__currentLoopData = $gadgets; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $gadget): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                <tr border-buttom="1px solid #d9d9d9">
+                <tr class="table-body">
                     <td><?php echo e($gadget->id); ?></td>
                     <td><?php echo e($gadget->name); ?></td>
                     <td><?php echo e($gadget->tahun_keluaran); ?></td>

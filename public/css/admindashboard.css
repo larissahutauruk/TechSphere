@@ -115,7 +115,8 @@ body {
 }
 .table-body{
     text-align: center;
-    height: 5vh;
+    height: 8vh;
+    border-bottom: 1px solid #333;
 }
 .link {
     font-weight: bold;
