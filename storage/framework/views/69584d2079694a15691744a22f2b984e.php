@@ -14,7 +14,7 @@
         <ul class="nav-links">
             <li><b><a href="<?php echo e(route('admin.categories.index')); ?>">Categories</a></b></li>
             <li><b><a href="<?php echo e(route(name: 'admin.gadgets.dashboard')); ?>">Gadgets</a></b></li>
-            <li><b><a href="#">Ratings</a></b></li>
+            <li><b><a href="<?php echo e(route('admin.ratings.index')); ?>">Ratings</a></b></li>
         </ul>
         <div class="nav-icons">
             <input type="text" class="search-bar" placeholder="Search something..">

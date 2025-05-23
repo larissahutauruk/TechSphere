@@ -13,6 +13,19 @@ class ratingsSeeder extends Seeder
      */
     public function run(): void
     {
-        //
+        ratings::create([
+            'gadgets_id' => '1',
+            'rating' => '8',
+            'comment' => 'suka ip',
+        ]);
+        ratings::create([
+            'gadgets_id' => '13',
+            'rating' => '5',
+            'comment' => 'jelek gasuka',
+        ]);ratings::create([
+            'gadgets_id' => '3',
+            'rating' => '10',
+            'comment' => 'bagus polll',
+        ]);
     }
 }

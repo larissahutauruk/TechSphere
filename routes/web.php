@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\RatingsController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PraloginController;
@@ -62,3 +63,6 @@ Route::prefix('admin')->group(function () {
     Route::get('/categories/create', [CategoriesController::class, 'create'])->name('admin.categories.create');
     Route::post('/categories/store', [CategoriesController::class, 'store'])->name('admin.categories.store');
 });
+
+// Halaman Rating
+route::get('/admin/ratings', [RatingsController::class, 'index'])->name('admin.ratings.index')->middleware('auth');
