@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Edit Produk</title>
-    <link rel="stylesheet" href="{{ asset(path: "css/editproduk.css") }}">
+    <link rel="stylesheet" href="{{ asset(path: "css/tambahproduk.css") }}">
 </head>
 
 <body>
@@ -53,7 +53,6 @@
                     required>
             </div>
             <div class="mb-3">
-                <label>photo</label>
                 <input type="file" name="image" value="{{ $gadgets->images }}" class="form-control" required>
             </div>
 

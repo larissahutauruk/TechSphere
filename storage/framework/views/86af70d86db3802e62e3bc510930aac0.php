@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Edit Produk</title>
-    <link rel="stylesheet" href="<?php echo e(asset(path: "css/editproduk.css")); ?>">
+    <link rel="stylesheet" href="<?php echo e(asset(path: "css/tambahproduk.css")); ?>">
 </head>
 
 <body>
@@ -54,12 +54,11 @@
                     required>
             </div>
             <div class="mb-3">
-                <label>photo</label>
                 <input type="file" name="image" value="<?php echo e($gadgets->images); ?>" class="form-control" required>
             </div>
 
             <a href="<?php echo e(route('admin.gadgets.dashboard')); ?>" class="btn btn-secondary">Kembali</a>
-            <button type="submit">Simpan</button>
+            <button type="submit" class="btn btn-primary">Simpan</button>
         </form>
     </div>
 
