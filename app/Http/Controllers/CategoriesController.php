@@ -7,11 +7,11 @@ use App\Models\categories;
 
 class CategoriesController extends Controller
 {
-    // Menampilkan daftar kategori
+    // Menampilkan daftar kategori di halaman admin
     public function index()
     {
         $categories = Categories::all(); // Mengambil semua kategori dari database
-        return view('admin.categories.index', compact('categories'));
+        return view('admin.categories.index', data:  compact('categories'));
     }
 
     // Menampilkan form untuk membuat kategori baru

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\gadgets;
+use App\Models\categories;
 
 class DashboardController extends Controller
 {
@@ -18,9 +19,10 @@ class DashboardController extends Controller
         if ($user->role === 'admin') {
             return redirect()->route('admin.gadgets.dashboard');
         } else
-            $gadgets = Gadgets::take(4)->get();
+        $categories = Categories::all();
+        $gadgets = Gadgets::take(4)->get();
         $recommendedGadgets = Gadgets::skip(4)->take(PHP_INT_MAX)->get();
 
-        return view('user.home', compact('gadgets', 'recommendedGadgets'));
+        return view('user.home', compact('gadgets', 'recommendedGadgets', 'categories'));
     }
 }

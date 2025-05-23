@@ -13,7 +13,13 @@
         <div class="logo">TechSphere</div>
         <ul class="nav-links">
             <li><b><a href="#">Home</a></b></li>
-            <li><b><a href="#">Gadgets</a></b></li>
+            <li class="dropdown">
+                <b><a href="#">Category</a></b>
+                <ul class="itulah"> @foreach($categories as $category)
+                     <li><a href="{{ route('homepage', $category->id) }}">{{ $category->name }}</a></li>
+                @endforeach
+                </ul>
+            </li>
             <li><b><a href="#">About Us</a></b></li>
         </ul>
         <div class="nav-icons">

@@ -12,9 +12,15 @@
     <nav class="navbar">
         <div class="logo">TechSphere</div>
         <ul class="nav-links">
-            <li><b><a href="#">Mobile</a></b></li>
-            <li><b><a href="#">Laptop</a></b></li>
-            <li><b><a href="#">PC</a></b></li>
+            <li><b><a href="<?php echo e(route('homepage')); ?>">Home</a></b></li>
+            <li class="dropdown">
+                <b><a href="#">Category</a></b>
+                <ul class="itulah"> <?php $__currentLoopData = $categories; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $category): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                    <li><a href="<?php echo e(route('homepage', $category->id)); ?>"><?php echo e($category->name); ?></a></li>
+                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                </ul>
+            </li>
+            <li><b><a href="#">About Us</a></b></li>
         </ul>
         <div class="nav-icons">
             <input type="text" class="search-bar" placeholder="Search something..">

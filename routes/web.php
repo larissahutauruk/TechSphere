@@ -1,5 +1,6 @@
 <?php
 
+
 use App\Http\Controllers\RatingsController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
@@ -33,6 +34,8 @@ Route::get('/user/dashboard', [DashboardController::class, 'index'])->name('user
 
 // Logout
 Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
+
+
 
 // Halaman Dashboard Admin
 Route::get('/admin/dashboard', [AdminController::class, 'index'])->name('admin.gadgets.dashboard')->middleware('auth');

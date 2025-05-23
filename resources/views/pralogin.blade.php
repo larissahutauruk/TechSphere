@@ -12,9 +12,15 @@
     <nav class="navbar">
         <div class="logo">TechSphere</div>
         <ul class="nav-links">
-            <li><b><a href="#">Mobile</a></b></li>
-            <li><b><a href="#">Laptop</a></b></li>
-            <li><b><a href="#">PC</a></b></li>
+            <li><b><a href="{{ route('homepage') }}">Home</a></b></li>
+            <li class="dropdown">
+                <b><a href="#">Category</a></b>
+                <ul class="itulah"> @foreach($categories as $category)
+                    <li><a href="{{ route('homepage', $category->id) }}">{{ $category->name }}</a></li>
+                @endforeach
+                </ul>
+            </li>
+            <li><b><a href="#">About Us</a></b></li>
         </ul>
         <div class="nav-icons">
             <input type="text" class="search-bar" placeholder="Search something..">
