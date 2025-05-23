@@ -5,110 +5,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-            align-items: center;
-        }
-
-        /* Logo */
-        .logo {
-            padding-left: 50px;
-            font-family: 'Kalnia';
-            font-size: 28px;
-            font-weight: bold;
-        }
-
-        /* Navigation Links */
-        .nav-links {
-            font-family: 'Calibri';
-            list-style: none;
-            display: flex;
-            right: 100px;
-        }
-
-        .nav-links li {
-            display: inline;
-        }
-
-        .nav-links a {
-            text-decoration: none;
-            color: black;
-            font-size: 20px;
-            transition: color 0.3s ease;
-        }
-
-        .nav-links a:hover {
-            color: black;
-        }
-
-        /* Icons & Search Bar */
-        .nav-icons {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-        }
-
-        .search-bar {
-            margin-right: 30px;
-            padding: 10px 40px;
-            border: 1px;
-            border-radius: 20px;
-            outline: none;
-            background-color: #d9d9d9;
-        }
-
-        .nav-icons img {
-            width: 24px;
-            height: 24px;
-        }
-
-        /* Navbar */
-        .navbar {
-            width: 100%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 15px 20px;
-            background: #f5f5f5;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-        }
-
-        .nav-links {
-            list-style: none;
-            display: flex;
-            gap: 50px;
-        }
-
-        .nav-links li a {
-            text-decoration: none;
-            color: black;
-            font-weight: bold;
-        }
-
-        .search input {
-            padding: 5px;
-            border-radius: 5px;
-            border: 1px solid #ccc;
-        }
-
-        .icons img {
-            width: 25px;
-            margin-left: 25px;
-        }
-    </style>
+    <link rel="stylesheet" href="{{ asset(path: "css/admindashboard.css") }}">
 </head>
 
 <body>
     <nav class="navbar">
         <div class="logo">TechSphere</div>
         <ul class="nav-links">
-            <li><b><a href="#">Categories</a></b></li>
+            <li><b><a href="{{ route('admin.categories.index') }}">Categories</a></b></li>
             <li><b><a href="{{ route('admin.gadgets.dashboard') }}">Gadgets</a></b></li>
             <li><b><a href="#">Ratings</a></b></li>
         </ul>
@@ -127,15 +31,28 @@
 
     @section('content')
         <h1>Daftar Kategori</h1>
-        <table>
-            <tr>
-                <th>ID</th>
-                <th>Name</th>
+        <a href="{{ route('admin.categories.create') }}" class="button-1">Tambah Produk</a>
+        <table class="tabel">
+            <tr class="tabel-head" border-buttom="1px solid #d9d9d9">
+                <th width="100vh">ID</th>
+                <th width="100vh">Kategori</th>
+                <th width="150vh">Opsi</th>
             </tr>
             @foreach($categories as $category)
-                <tr>
+                <tr class="table-body">
                     <td>{{ $category->id }}</td>
                     <td>{{ $category->name }}</td>
+                    <td><!-- Link Edit -->
+                        <a href="{{ route('admin.categories.edit', $category->id) }}" class="link">Edit</a>
+
+                        <!-- Link Delete -->
+                        <form action="{{route('admin.categories.destroy', $category->id)}}" method="POST">
+                            @csrf
+                            @method('DELETE')
+                            <button type="submit" onclick="return confirm('Yakin ingin menghapus?')"
+                                class="button">Hapus</button>
+                        </form>
+                    </td>
                 </tr>
             @endforeach
         </table>

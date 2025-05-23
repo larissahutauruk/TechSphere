@@ -35,6 +35,7 @@ Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
 
 // Halaman Dashboard Admin
 Route::get('/admin/dashboard', [AdminController::class, 'index'])->name('admin.gadgets.dashboard')->middleware('auth');
+
 // Halaman Gadgets
 Route::get('/admin/gadgets', [AdminController::class, 'gadgets'])->name('admin.gadgets')->middleware('auth');
 // Halaman Edit & Delete
@@ -47,5 +48,17 @@ Route::prefix('admin')->group(function () {
     Route::get('/gadgets/create', [GadgetsController::class, 'create'])->name('admin.gadgets.create');
     Route::post('/gadgets/store', [GadgetsController::class, 'store'])->name('admin.gadgets.store');
 });
+
 // Halaman Categories
-Route::get('/admin/categories', [CategoriesController::class, 'categories'])->name('admin.categories.index')->middleware('auth');
+Route::get('/admin/categories', [CategoriesController::class, 'index'])->name('admin.categories.index')->middleware('auth');
+// Halaman Edit & Delete Kategori
+Route::prefix('admin')->group(function () {
+    Route::get('/categories/{id}/edit', [CategoriesController::class, 'edit'])->name('admin.categories.edit')->middleware('auth');
+    Route::put('/categories/{id}', [CategoriesController::class, 'update'])->name('admin.categories.update')->middleware('auth');
+    Route::delete('/admin/categories/{id}', [CategoriesController::class, 'destroy'])->name('admin.categories.destroy')->middleware('auth');
+});
+// Menampilkan Tambah Kategori
+Route::prefix('admin')->group(function () {
+    Route::get('/categories/create', [CategoriesController::class, 'create'])->name('admin.categories.create');
+    Route::post('/categories/store', [CategoriesController::class, 'store'])->name('admin.categories.store');
+});

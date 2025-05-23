@@ -52,7 +52,7 @@
             </div>
 
             <div class="mb-3">
-                <label>Foto Produk</label>
+                <label>photo</label>
                 <input type="file" name="image" class="form-control">
             </div>
 

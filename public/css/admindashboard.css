@@ -113,6 +113,10 @@ body {
     font-size: 14px;
     font-weight: 100;
 }
+.table-body{
+    text-align: center;
+    height: 5vh;
+}
 .link {
     font-weight: bold;
     color: black;
