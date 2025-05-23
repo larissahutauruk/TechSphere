@@ -126,3 +126,13 @@ body {
     cursor: pointer;
     font-size: 16px;
 }
+.button-1 {
+    color: #fff;
+    background: linear-gradient(#333, #7f7f7f);
+    border-radius: 30px;
+    margin-left: -115vh;
+    padding: 15px 45px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 18px;
+}
