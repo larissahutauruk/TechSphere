@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\categories;
+use App\Models\gadgets;
 
 class CategoriesController extends Controller
 {
@@ -13,13 +14,25 @@ class CategoriesController extends Controller
         $categories = Categories::all(); // Mengambil semua kategori dari database
         return view('admin.categories.index', data: compact('categories'));
     }
-
-    public function about()
+    public function admin()
     {
         $categories = Categories::all();
         return view('about', compact('categories'));
     }
+    public function user()
+    {
+        $categories = Categories::all();
+        return view('user.about', compact('categories'));
+    }
 
+    // Menampilkan Halaman Gadgets by Categories
+    public function showGadgetsByCategory($id)
+    {
+        $category = Categories::findOrFail($id);
+        $gadgets = Gadgets::where('categories_id', $id)->get();
+
+        return view('user.category', compact('category', 'gadgets'));
+    }
 
     // Menampilkan form untuk membuat kategori baru
     public function create()

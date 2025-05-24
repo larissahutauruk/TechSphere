@@ -12,15 +12,15 @@
     <nav class="navbar">
         <div class="logo">TechSphere</div>
         <ul class="nav-links">
-            <li><b><a href="#">Home</a></b></li>
+            <li><b><a href="<?php echo e(route('user.home')); ?>">Home</a></b></li>
             <li class="dropdown">
                 <b><a href="#">Category</a></b>
                 <ul class="itulah"> <?php $__currentLoopData = $categories; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $category): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                    <li><a href="<?php echo e(route('homepage', $category->id)); ?>"><?php echo e($category->name); ?></a></li>
+                    <li><a href="<?php echo e(route('user.category', $category->id)); ?>"><?php echo e($category->name); ?></a></li>
                 <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                 </ul>
             </li>
-            <li><b><a href="#">About Us</a></b></li>
+            <li><b><a href="<?php echo e(route('user.about')); ?>">About Us</a></b></li>
         </ul>
         <div class="nav-icons">
             <input type="text" class="search-bar" placeholder="Search something..">
@@ -39,7 +39,7 @@
                 <img src="<?php echo e(asset('pict/' . $gadget->image)); ?>" alt="<?php echo e($gadget->name); ?>">
             </div>
             <div class="product-name"><?php echo e($gadget->name); ?></div>
-            <a href="#" class="detail-link">Lihat Detail</a>
+            <a href="<?php echo e(route('user.detail', $gadget->id)); ?>" class="detail-link">Lihat Detail</a>
         </div>
     <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
 
@@ -52,7 +52,7 @@
                     <div class="produk-box">
                         <img src="<?php echo e(asset('pict/' . $gadget->image)); ?>" alt="<?php echo e($gadget->name); ?>">
                     </div>
-                    <a href="#" class="lihat-detail">Lihat Detail</a>
+                    <a href="<?php echo e(route('user.detail', $gadget->id)); ?>" class="lihat-detail">Lihat Detail</a>
                 </div>
             <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
         </div>
@@ -68,8 +68,8 @@
             <div class="footer-left">
                 <h2>TechSphere.</h2>
                 <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, <br> sed do eiusmod tempor incididunt ut
-                    labore et dolore magna aliqua. <br> Ut enim ad minim veniam.
+                    Platform terpercaya yang menyajikan informasi lengkap, akurat, <br>
+                    dan terbaru tentang alat komunikasi seperti smartphone, laptop, PC, dan tablet.
                 </p>
                 <div class="footer-socials">
                     <a href="#"><img src="<?php echo e(asset('pict/web.png')); ?>" alt="Website" /></a>

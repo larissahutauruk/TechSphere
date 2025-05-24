@@ -50,7 +50,7 @@ body {
     border: 1px;
     border-radius: 20px;
     outline: none;
-    background-color: #7f7f7f;
+    background-color: #f5f5f5;
 }
 
 .nav-icons img {
@@ -126,6 +126,7 @@ body {
     border-bottom-left-radius: 80px;
     border-bottom-right-radius: 80px;
     background-color: #f5f5f5;
+    box-shadow: inset 16px -20px 15px #fff;
 }
 .frame .overlap {
     position: absolute;
@@ -172,18 +173,18 @@ body {
     padding: 0;
     width: 100%;
 }
-.frame-2 .company{
+.frame-2 .company {
     position: absolute;
     width: 80vh;
     height: 100vh;
     left: 50px;
 }
-.frame-2 h2{
+.frame-2 h2 {
     position: absolute;
-    font-family: 'Kalnia';
+    font-family: "Kalnia";
     font-size: 42px;
     font-weight: 900;
-    color: #2D418F;
+    color: #2d418f;
     right: 100px;
     top: 140px;
 }
@@ -199,4 +200,174 @@ body {
     text-align: justify;
     letter-spacing: 0;
     line-height: normal;
+}
+
+.frame-3 {
+    position: absolute;
+    margin: 0;
+    padding: 0;
+}
+.frame-3 h2 {
+    position: absolute;
+    top: 110vh;
+    left: 90vh;
+    font-family: "Montserrat", sans-serif;
+    font-size: 32px;
+    font-weight: 800;
+}
+.partner {
+    position: relative;
+    background-color: #f5f5f5;
+    width: 205vh;
+    height: 120px;
+    top: 125vh;
+    left: 0;
+}
+.partner-img {
+    margin-top: 10px;
+    position: relative;
+    margin-left: 80px;
+    align-items: center;
+}
+
+.frame-4 {
+    top: 245vh;
+    position: absolute;
+    margin: 0;
+    padding: 0;
+    width: 2028px;
+}
+.frame-4 .team {
+    position: absolute;
+    display: flex;
+    margin: 20px;
+    top: 120px;
+    left: 350px;
+    gap: 200px;
+}
+.frame-4 h2 {
+    position: absolute;
+    left: 80vh;
+    font-family: "Montserrat", sans-serif;
+    font-size: 32px;
+    font-weight: 800;
+}
+.frame-4 .box {
+    box-shadow: -15px -12px 11.1px #7f7f7f;
+    background-color: #f5f5f5;
+    width: 290px;
+    border-radius: 20px;
+    height: 450px;
+}
+.frame-4 .team .box h3 {
+    font-family: "Poppins";
+    font-size: 18px;
+    font-weight: 300;
+    margin-left: 30px;
+    margin-top: 10px;
+}
+.frame-4 .team .box p {
+    font-family: "Poppins";
+    margin-left: 30px;
+}
+.frame-4 img {
+    margin: 20px;
+    border-radius: 20px;
+    height: 300px;
+    width: 250px;
+}
+
+.web h2 {
+    position: absolute;
+    top: 335vh;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 800;
+    left: 80vh;
+}
+
+footer {
+    position: absolute;
+    top: 355vh;
+    text-align: justify;
+    width: 100%;
+    height: 50vh;
+    color: #fff;
+    background-color: #000;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.footer-left {
+    max-width: 150vh;
+    margin-left: 60px;
+}
+
+.footer-left h2 {
+    margin-top: 60px;
+    font-size: 36px;
+    font-family: "Kelnia";
+    font-weight: bold;
+}
+
+.footer-left p {
+    line-height: 1.8;
+    margin-top: 20px;
+    font-size: 20px;
+    font-weight: lighter;
+    font-family: "Calibri";
+}
+
+.footer-socials {
+    margin-top: 40px;
+    display: flex;
+    gap: 25px;
+}
+
+.footer-socials img {
+    width: 32px;
+    height: 32px;
+    cursor: pointer;
+}
+
+.footer-center h2,
+.footer-right h2 {
+    font-family: "Calibri";
+    text-decoration: underline;
+    font-weight: lighter;
+    margin-bottom: 15px;
+}
+.footer-right,
+.footer-center {
+    margin-right: 60px;
+    margin-top: 60px;
+}
+.footer-center ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-center ul li {
+    margin: 10px 0;
+    font-family: "Calibri";
+    font-weight: lighter;
+    font-size: 20px;
+}
+
+.footer-right a {
+    color: #fff;
+    text-decoration: none;
+    font-family: "Calibri";
+    font-weight: lighter;
+    font-size: 20px;
+}
+
+.footer-right p {
+    margin: 10px 0;
+    font-size: 20px;
+    font-family: "Calibri";
+    font-weight: lighter;
 }

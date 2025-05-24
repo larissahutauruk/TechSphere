@@ -11,7 +11,7 @@
     <nav class="navbar">
         <div class="logo">TechSphere</div>
         <ul class="nav-links">
-            <li><b><a href="{{ route('homepage') }}">Home</a></b></li>
+            <li><b><a href="{{ route('user.home') }}">Home</a></b></li>
             <li class="dropdown">
                 <b><a href="#">Category</a></b>
                 <ul class="itulah"> @foreach($categories as $category)
@@ -19,12 +19,16 @@
                 @endforeach
                 </ul>
             </li>
-            <li><b><a href="{{ route('about') }}">About Us</a></b></li>
+            <li><b><a href="#">About Us</a></b></li>
         </ul>
         <div class="nav-icons">
             <input type="text" class="search-bar" placeholder="Search something..">
             <a href="#"><img src="{{ asset('pict/Home.png') }}" alt="Home"></a>
-            <a href="{{ route('pralogin') }}"><img src="{{ asset('pict/Account.png') }}" alt="User"></a>
+            <a href="#"><img src="{{ asset('pict/Account.png') }}" alt="User"></a>
+            <form action="{{ route('logout') }}" method="POST">
+                @csrf
+                <button type="submit" class="btn btn-danger">Logout</button>
+            </form>
         </div>
     </nav>
 
@@ -91,7 +95,7 @@
             <div class="footer-left">
                 <h2>TechSphere.</h2>
                 <p>
-                    Platform terpercaya yang menyajikan informasi lengkap, akurat, <br> 
+                    Platform terpercaya yang menyajikan informasi lengkap, akurat, <br>
                     dan terbaru tentang alat komunikasi seperti smartphone, laptop, PC, dan tablet.
                 </p>
                 <div class="footer-socials">

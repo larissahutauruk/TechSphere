@@ -16,7 +16,7 @@
             <li class="dropdown">
                 <b><a href="#">Category</a></b>
                 <ul class="itulah"> @foreach($categories as $category)
-                     <li><a href="{{ route('homepage', $category->id) }}">{{ $category->name }}</a></li>
+                    <li><a href="{{ route('homepage', $category->id) }}">{{ $category->name }}</a></li>
                 @endforeach
                 </ul>
             </li>
@@ -64,8 +64,8 @@
             <div class="footer-left">
                 <h2>TechSphere.</h2>
                 <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, <br> sed do eiusmod tempor incididunt ut
-                    labore et dolore magna aliqua. <br> Ut enim ad minim veniam.
+                    Platform terpercaya yang menyajikan informasi lengkap, akurat, <br>
+                    dan terbaru tentang alat komunikasi seperti smartphone, laptop, PC, dan tablet.
                 </p>
                 <div class="footer-socials">
                     <a href="#"><img src="{{asset('pict/web.png')}}" alt="Website" /></a>

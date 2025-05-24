@@ -8,6 +8,11 @@ use App\Models\Categories;
 
 class GadgetsController extends Controller
 {
+    public function index($id)
+    {
+        $gadgets = Gadgets::findOrFail($id);
+        return view('user.detail', compact('gadgets'));
+    }
     public function edit($id)
     {
         $gadgets = Gadgets::findOrFail($id);

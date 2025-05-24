@@ -24,18 +24,25 @@ Route::get('/register', [RegisterController::class, 'showRegistrationForm'])->na
 Route::post('/register', [RegisterController::class, 'register'])->name('register.post');
 // Dashboard (harus login)
 Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
+// Halaman About Us
+Route::get('/about', [CategoriesController::class, 'admin'])->name('about');
+
+
 // Halaman User
-Route::get('/user/dashboard', [DashboardController::class, 'index'])->name('user.home')->middleware('auth');
+Route::get('/user/dashboard', [DashboardController::class, 'index'])->name('user.home');
 // Logout
 Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
 // Halaman About Us
-Route::get('/about', [CategoriesController::class, 'about'])->name('about');
+Route::get('/user/about-us', [CategoriesController::class, 'user'])->name('user.about');
+// Halaman Detail Produk
+Route::get('/user/detail/{id}', [GadgetsController::class, 'index'])->name('user.detail');
+// Halaman Gadgets by Categories
+Route::get('/user/category/{id}', [CategoriesController::class, 'showGadgetsByCategory'])->name('user.category');
 
 
 
-// Halaman Dashboard Admin
+// Halaman Admin
 Route::get('/admin/dashboard', [AdminController::class, 'index'])->name('admin.gadgets.dashboard')->middleware('auth');
-
 // Halaman Gadgets
 Route::get('/admin/gadgets', [AdminController::class, 'gadgets'])->name('admin.gadgets')->middleware('auth');
 // Halaman Edit & Delete
@@ -48,7 +55,6 @@ Route::prefix('admin')->group(function () {
     Route::get('/gadgets/create', [GadgetsController::class, 'create'])->name('admin.gadgets.create');
     Route::post('/gadgets/store', [GadgetsController::class, 'store'])->name('admin.gadgets.store');
 });
-
 // Halaman Categories
 Route::get('/admin/categories', [CategoriesController::class, 'index'])->name('admin.categories.index')->middleware('auth');
 // Halaman Edit & Delete Kategori
@@ -62,6 +68,5 @@ Route::prefix('admin')->group(function () {
     Route::get('/categories/create', [CategoriesController::class, 'create'])->name('admin.categories.create');
     Route::post('/categories/store', [CategoriesController::class, 'store'])->name('admin.categories.store');
 });
-
 // Halaman Rating
 route::get('/admin/ratings', [RatingsController::class, 'index'])->name('admin.ratings.index')->middleware('auth');
