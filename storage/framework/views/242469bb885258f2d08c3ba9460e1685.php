@@ -20,7 +20,7 @@
                 <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                 </ul>
             </li>
-            <li><b><a href="#">About Us</a></b></li>
+            <li><b><a href="<?php echo e(route('about')); ?>">About Us</a></b></li>
         </ul>
         <div class="nav-icons">
             <input type="text" class="search-bar" placeholder="Search something..">

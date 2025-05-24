@@ -14,26 +14,22 @@ use App\Http\Controllers\CategoriesController;
 
 // Homepage //
 Route::get('/', [HomeController::class, 'index'])->name('homepage');
-
 // Halaman Pralogin //
 Route::get('/pralogin', [PraloginController::class, 'pralogin'])->name('pralogin');
-
 // Halaman Login
 Route::get('/login', [LoginController::class, 'showLoginForm'])->name('login');
 Route::post('/login', [LoginController::class, 'login']);
-
 // Halaman Register
 Route::get('/register', [RegisterController::class, 'showRegistrationForm'])->name('register');
 Route::post('/register', [RegisterController::class, 'register'])->name('register.post');
-
 // Dashboard (harus login)
 Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
-
 // Halaman User
 Route::get('/user/dashboard', [DashboardController::class, 'index'])->name('user.home')->middleware('auth');
-
 // Logout
 Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
+// Halaman About Us
+Route::get('/about', [CategoriesController::class, 'about'])->name('about');
 
 
 

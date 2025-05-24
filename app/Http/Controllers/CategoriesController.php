@@ -11,8 +11,15 @@ class CategoriesController extends Controller
     public function index()
     {
         $categories = Categories::all(); // Mengambil semua kategori dari database
-        return view('admin.categories.index', data:  compact('categories'));
+        return view('admin.categories.index', data: compact('categories'));
     }
+
+    public function about()
+    {
+        $categories = Categories::all();
+        return view('about', compact('categories'));
+    }
+
 
     // Menampilkan form untuk membuat kategori baru
     public function create()

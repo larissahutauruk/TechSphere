@@ -20,7 +20,7 @@
                 @endforeach
                 </ul>
             </li>
-            <li><b><a href="#">About Us</a></b></li>
+            <li><b><a href="{{route('about')}}">About Us</a></b></li>
         </ul>
         <div class="nav-icons">
             <input type="text" class="search-bar" placeholder="Search something..">

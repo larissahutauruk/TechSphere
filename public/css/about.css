@@ -1,0 +1,202 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    gap: 20px;
+    align-items: center;
+}
+
+/* Logo */
+.logo {
+    padding-left: 50px;
+    font-family: "Kalnia";
+    font-size: 28px;
+    font-weight: bold;
+}
+
+/* Navigation Links */
+.nav-links {
+    font-family: "Calibri";
+    list-style: none;
+    display: flex;
+    right: 100px;
+}
+
+.nav-links li {
+    display: inline;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: black;
+    font-size: 20px;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: black;
+}
+
+/* Icons & Search Bar */
+.nav-icons {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.search-bar {
+    margin-right: 30px;
+    padding: 10px 40px;
+    border: 1px;
+    border-radius: 20px;
+    outline: none;
+    background-color: #7f7f7f;
+}
+
+.nav-icons img {
+    width: 24px;
+    height: 24px;
+}
+
+/* Navbar */
+.navbar {
+    width: 98%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    background: #d9d9d9;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 50px;
+}
+
+.nav-links li a {
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+}
+.nav-links .dropdown {
+    position: relative;
+}
+
+.nav-links .itulah {
+    display: none;
+    position: absolute;
+    background-color: #fff;
+    min-width: 160px;
+    z-index: 1;
+    border: 1px solid #f5f5f5;
+    padding: 10px 0;
+}
+
+.nav-links .itulah li:hover {
+    background-color: #f5f5f5;
+}
+
+.nav-links .itulah li {
+    padding: 10px 20px;
+}
+
+.nav-links .itulah li a {
+    color: black;
+    font-family: "Calibri";
+    font-weight: lighter;
+    font-size: 16px;
+    text-decoration: none;
+}
+
+.nav-links .dropdown:hover .itulah {
+    display: grid;
+}
+
+.frame {
+    width: 2028px;
+}
+.frame .overlap-group {
+    top: 0;
+    position: relative;
+    width: 75%;
+    padding: 0;
+    height: 610px;
+    border-bottom-left-radius: 80px;
+    border-bottom-right-radius: 80px;
+    background-color: #f5f5f5;
+}
+.frame .overlap {
+    position: absolute;
+    width: 420px;
+    height: 604px;
+    right: 1px;
+    background-image: url(/pict/Ellipse.png);
+    background-size: 100% 100%;
+}
+
+.frame .image {
+    position: absolute;
+    width: 380px;
+    height: 540px;
+    top: 32px;
+    right: 2px;
+}
+
+.frame .text-wrapper {
+    margin-top: 30vh;
+    margin-left: -100vh;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 800;
+    color: #000000;
+    font-size: 38px;
+    letter-spacing: 0;
+    line-height: normal;
+}
+
+.frame .div {
+    margin-left: -110vh;
+    top: 434vh;
+    font-family: "Kalnia";
+    font-weight: 900;
+    color: #2d418e;
+    font-size: 96px;
+    letter-spacing: 0;
+    line-height: normal;
+}
+
+.frame-2 {
+    position: absolute;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+.frame-2 .company{
+    position: absolute;
+    width: 80vh;
+    height: 100vh;
+    left: 50px;
+}
+.frame-2 h2{
+    position: absolute;
+    font-family: 'Kalnia';
+    font-size: 42px;
+    font-weight: 900;
+    color: #2D418F;
+    right: 100px;
+    top: 140px;
+}
+.frame-2 p {
+    position: absolute;
+    width: 600px;
+    top: 250px;
+    right: 100px;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 800;
+    color: #000000;
+    font-size: 20px;
+    text-align: justify;
+    letter-spacing: 0;
+    line-height: normal;
+}
