@@ -39,7 +39,7 @@ Route::get('/user/detail/{id}', [GadgetsController::class, 'index'])->name('user
 // Halaman Gadgets by Categories
 Route::get('/user/category/{id}', [CategoriesController::class, 'showGadgetsByCategory'])->name('user.category');
 
-
+// Halaman Gatau coba-coba
 
 // Halaman Admin
 Route::get('/admin/dashboard', [AdminController::class, 'index'])->name('admin.gadgets.dashboard')->middleware('auth');
